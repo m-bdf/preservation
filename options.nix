@@ -59,7 +59,8 @@ let
         };
         user = lib.mkOption {
           type = lib.types.str;
-          default = defaultOwner;
+          default = config.users.users.${defaultOwner}.name;
+          defaultText = "config.users.users.\${defaultOwner}.name";
           description = ''
             Specify the user that owns the directory.
           '';
@@ -106,7 +107,8 @@ let
         };
         parent.user = lib.mkOption {
           type = lib.types.str;
-          default = defaultOwner;
+          default = config.users.users.${defaultOwner}.name;
+          defaultText = "config.users.users.\${defaultOwner}.name";
           description = ''
             Specify the user that owns the parent directory of this file.
           '';
@@ -202,7 +204,8 @@ let
         };
         user = lib.mkOption {
           type = lib.types.str;
-          default = defaultOwner;
+          default = config.users.users.${defaultOwner}.name;
+          defaultText = "config.users.users.\${defaultOwner}.name";
           description = ''
             Specify the user that owns the file.
           '';
@@ -249,7 +252,8 @@ let
         };
         parent.user = lib.mkOption {
           type = lib.types.str;
-          default = defaultOwner;
+          default = config.users.users.${attrs.defaultOwner}.name;
+          defaultText = "config.users.users.\${defaultOwner}.name";
           description = ''
             Specify the user that owns the parent directory of this file.
           '';
